@@ -1,0 +1,23 @@
+{
+  "name": "vin-decoder",
+  "version": "1.0.0",
+  "description": "An app that uses an API to get you information on your car based on a vin",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o public/css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psanchez27/vin-decoder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psanchez27/vin-decoder/issues"
+  },
+  "homepage": "https://github.com/psanchez27/vin-decoder#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}
