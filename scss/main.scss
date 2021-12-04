@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
+
 /* Color Theme Swatches in Hex */
 $color-1-hex: #F2AB27;
 $color-2-hex: #BF964B;
@@ -12,8 +14,109 @@ $color-3-rgba: rgba(216,216,216, 1);
 $color-4-rgba: rgba(89,89,89, 1);
 $color-5-rgba: rgba(12,12,12, 1);
 
+$error: orangered;
+$success: green;
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('https://source.unsplash.com/random/?cars');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+.container{
+    width: 80vw;
+    max-width: 650px;
+    height: 50vh;
+    margin: 10em auto;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+h1{
+    font-size: 42px;
+    text-transform: uppercase;
+}
+
+#vin.error{
+    border-color: $error;
+}
+
+#vin.success{
+    border-color: $success;
+}
+
+.shake{
+    animation: shake .3s forwards;
+}
+
+@keyframes shake{
+    25%{transform: translateX(10px)}
+    50%{transform: translateX(-10px)}
+    75%{transform: translateX(10px)}
+    100%{transform: translateX(0px)}
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    .form-control {
+        width: 80%;
+        max-width: 450px;
+
+        input{
+            border: 1px solid steelblue;
+            line-height: 1.8em;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 4px;
+        }
+    }
+
+}
+
+.elements{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 300px;
+    .element{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.btn{
+    margin: 20px auto;
+    font-size: 22px;
+    padding: 12px;
+    width: 80%;
+    max-width: 450px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .15s;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+.btn:active{
+    transform: scale(.9);
 }
