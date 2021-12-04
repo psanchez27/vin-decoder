@@ -25,20 +25,19 @@ btn.addEventListener('click', () => {
             }
           )
           .then(res => res.json())
-          .then(function(data) {
-              if(data.data === null){
-                vin.classList.add('error');
-                shake();
-                year.textContent = '';
-                make.textContent = '';
-                model.textContent = '';
-              } else{
-                vin.classList.remove('error');
-                year.textContent = data.data.year;
-                make.textContent = data.data.make;
-                model.textContent = data.data.model;
-              }
-          });
+          .then(function(res) {
+              vin.classList.remove('error');
+              year.textContent = res.data.year;
+              make.textContent = res.data.make;
+              model.textContent = res.data.model;
+          })
+          .catch(function(err) {
+              vin.classList.add('error');
+              shake();
+              year.textContent = '';
+              make.textContent = '';
+              model.textContent = '';
+          })
     }
 })
 
