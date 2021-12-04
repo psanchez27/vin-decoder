@@ -25,16 +25,16 @@ btn.addEventListener('click', () => {
             }
           )
           .then(res => res.json())
-          .then(function(res) {
+          .then(res => {
               vin.classList.remove('error');
               year.textContent = res.data.year;
               make.textContent = res.data.make;
               model.textContent = res.data.model;
           })
-          .catch(function(err) {
+          .catch(err => {
               vin.classList.add('error');
               shake();
-              year.textContent = '';
+              year.textContent = 'Invalid VIN';
               make.textContent = '';
               model.textContent = '';
           })
