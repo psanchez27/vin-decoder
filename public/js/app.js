@@ -2,6 +2,8 @@ const vin = document.getElementById('vin');
 const year = document.getElementById('year');
 const make = document.getElementById('make');
 const model = document.getElementById('model');
+const trim = document.getElementById('trim');
+const engine = document.getElementById('engine');
 const btn = document.getElementById('get-vin');
 
 btn.addEventListener('click', () => {
@@ -26,10 +28,13 @@ btn.addEventListener('click', () => {
           )
           .then(res => res.json())
           .then(res => {
+            // console.log(res.data)
               vin.classList.remove('error');
               year.textContent = res.data.year;
               make.textContent = res.data.make;
               model.textContent = res.data.model;
+              trim.textContent = res.data.trim;
+              engine.textContent = res.data.engine;
           })
           .catch(err => {
               vin.classList.add('error');
@@ -37,6 +42,8 @@ btn.addEventListener('click', () => {
               year.textContent = 'Invalid VIN';
               make.textContent = '';
               model.textContent = '';
+              trim.textContent = '';
+              engine.textContent = '';
           })
     }
 })
