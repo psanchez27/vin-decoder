@@ -11,7 +11,7 @@ btn.addEventListener('click', () => {
     }else{
         //check the vin
         fetch(
-            `http://api.carmd.com/v3.0/decode?vin=${vin.value}`,
+            `https://api.carmd.com/v3.0/decode?vin=${vin.value}`,
             {
               headers: {
                 accept: "application/json",
